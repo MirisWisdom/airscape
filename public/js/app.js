@@ -47191,7 +47191,9 @@ Vue.component('seascape-map', {
 	props: [],
 
 	data: function data() {
-		return {};
+		return {
+			location: {}
+		};
 	},
 
 
@@ -47243,6 +47245,7 @@ Vue.component('seascape-map', {
 					address = [place.address_components[0] && place.address_components[0].short_name || '', place.address_components[1] && place.address_components[1].short_name || '', place.address_components[2] && place.address_components[2].short_name || ''].join(' ');
 				}
 
+				self.location = place;
 				self.searchLocation();
 			});
 		},
@@ -47255,8 +47258,8 @@ Vue.component('seascape-map', {
 
 			axios.post('/vue/search/store', formData).then(function (response) {
 
-				console.log('save search');
-				// Do something here
+				// Display search results
+
 			}).catch(function (error) {
 
 				console.log(error);
@@ -47270,7 +47273,15 @@ Vue.component('seascape-map', {
 
 	updated: function updated() {},
 
-	watch: {}
+	watch: {
+		location: function location() {
+			var part1 = this.location.address_components[0].long_name;
+			var part2 = this.location.address_components[2].long_name;
+
+			var msg = new SpeechSynthesisUtterance('You have searched for ' + part1 + ' ' + part2);
+			window.speechSynthesis.speak(msg);
+		}
+	}
 
 });
 

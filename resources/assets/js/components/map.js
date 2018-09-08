@@ -4,7 +4,7 @@ Vue.component('seascape-map', {
 
 	data() {
 		return {
-			
+			location: {}
 		}
 	},
 
@@ -62,6 +62,7 @@ Vue.component('seascape-map', {
 		        ].join(' ');
 		      }
 
+		      self.location = place
 		      self.searchLocation()
 
 		    });
@@ -77,8 +78,7 @@ Vue.component('seascape-map', {
 
 			axios.post('/vue/search/store', formData).then(function(response){
 
-				console.log('save search')
-				// Do something here
+				// Display search results
 
 			})
 			.catch(error => {
@@ -105,11 +105,17 @@ Vue.component('seascape-map', {
 
 	updated: function() {
 
-
 	},
 
 	watch: {
 
+		location(){
+			var part1 = this.location.address_components[0].long_name;
+			var part2 = this.location.address_components[2].long_name;
+
+			var msg = new SpeechSynthesisUtterance('You have searched for ' + part1 + ' ' + part2);
+			window.speechSynthesis.speak(msg);
+		}
 
 	}
 
