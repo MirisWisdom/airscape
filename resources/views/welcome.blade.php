@@ -49,6 +49,24 @@
                     </div>
                 </div>
             </header>
+            <section class="full-height parallax-window">
+                <div class="container-fluid text-light">
+                    <div class="row">
+                        <div class="col-md-12 mt-5 text-center">
+                            <h1>Can correlations provide us with meaningful conclusions?</h1>
+                            <p>
+                                Data
+                            </p>
+                            <p>
+                                With seascape, we aim to help you figure out the correlation between marine and
+                                atmospheric pollution and the quality of life in urban and rural areas.
+                                <br>
+                                By leveraging open data, we provide you with a service that will: INSERT STUFF!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             @endguest
             @include('map')
         </div>

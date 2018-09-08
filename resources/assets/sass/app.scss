@@ -97,3 +97,9 @@ video {
   background-size: cover;
   transition: 1s opacity;
 }
+
+section {
+  background-image: url("/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
