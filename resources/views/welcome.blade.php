@@ -26,11 +26,20 @@
                             <img src="{{ asset('logo.png') }}" alt="">
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row my-5">
                         <div class="col-md-12">
                             <a href="{{ route('login') }}" class="btn btn-outline-light btn-250 btn-radius-left">Login</a>
                             <a href="#mapContainer" class="btn btn-outline-light btn-250 rounded-0">Try it!</a>
                             <a href="{{ route('register') }}" class="btn btn-outline-light btn-250 btn-radius-right text-light">Register</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-light text-monospace">
+                                <small>
+                                    GH:\> isobelle mead \ emilian roman \ michael dolphin \ ryan \ jason _
+                                </small>
+                            </p>
                         </div>
                     </div>
                 </div>
