@@ -21,11 +21,9 @@
                 <div class="container-fluid text-light">
                     <div class="row">
                         <div class="col-md-12">
-                            <img src="{{ asset('logo.png') }}" alt="">
+                            <img src="{{ asset('logo.png') }}" class="img-fluid">
                         </div>
-                    </div>
-                    <div class="row my-5">
-                        <div class="col-md-12 ">
+                        <div class="col-md-12 mt-5">
                             <h4>How does pollution impact our air, our oceans, and us in urban and regional areas?</h4>
                             <h5>With open government data, we help you understand our atmosphere and hydrosphere.</h5>
                         </div>
