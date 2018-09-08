@@ -63,3 +63,10 @@ html, body {
 .m-b-md {
   margin-bottom: 30px;
 }
+
+.shadow{
+  z-index: 99;
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+}
