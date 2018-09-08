@@ -1,4 +1,4 @@
-<seascape-map inline-template >
+<seascape-map inline-template ref="map">
 
 	<div>
 		<div class="container-fluid" id="mapContainer">
