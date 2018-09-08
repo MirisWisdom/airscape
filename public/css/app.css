@@ -10479,7 +10479,6 @@ a.text-dark:focus {
 
 html,
 body {
-  background-image: url("/background.png");
   color: #003471;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
@@ -10551,5 +10550,9 @@ body {
 
 .btn-radius-right {
   border-radius: 0 5px 5px 0;
+}
+
+.header {
+  background-color: rgba(0, 31, 41, 0.85);
 }
 

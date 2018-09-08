@@ -17,7 +17,9 @@
     <body>
         <div id="app">
             @guest
-            <header class="text-center my-5">
+            <header class="full-height text-center p-5 header parallax-window"
+                    data-parallax="scroll"
+                    data-image-src="/background.jpg">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -26,9 +28,9 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col-md-12">
-                            <a href="{{ route('login') }}" class="btn btn-primary btn-250 btn-radius-left text-light">Login</a>
-                            <a href="#mapContainer" class="btn btn-secondary btn-250 rounded-0 text-light">Try it!</a>
-                            <a href="{{ route('register') }}" class="btn btn-primary btn-250 btn-radius-right text-light">Register</a>
+                            <a href="{{ route('login') }}" class="btn btn-outline-light btn-250 btn-radius-left">Login</a>
+                            <a href="#mapContainer" class="btn btn-outline-light btn-250 rounded-0">Try it!</a>
+                            <a href="{{ route('register') }}" class="btn btn-outline-light btn-250 btn-radius-right text-light">Register</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +40,7 @@
         </div>
 
         <script src="{{asset('js/app.js')}}"></script>
-
+        <script src="{{asset('js/parallax.min.js')}}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmRcarfXPtbpOPF1QAcUTvmcAuiSVVYcw&libraries=places&callback=initMap"
         async defer></script>
     </body>
