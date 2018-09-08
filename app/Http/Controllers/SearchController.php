@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Search;
+use App\AirData;
 
 class SearchController extends Controller
 {
     public function store(Request $request){
+
+
+        \Log::info($request);
 
     	$user = \Auth::user();
 
@@ -18,7 +22,16 @@ class SearchController extends Controller
     	$s->location = $request->location;
     	$s->save();
 
-    	$results = null;
+
+        $minLat = $request->lat - 1;
+        $maxLat = $request->lat + 1;
+
+    	$results = AirData::where(function($query) use ($minLat, $maxLat){
+            $query->where('lat', '>=', $minLat)    
+                    ->where('lat', '<=', $maxLat); 
+                })->get();
+
+        \Log::info($results);
 
     	return $results;
 

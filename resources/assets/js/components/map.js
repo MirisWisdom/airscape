@@ -4,8 +4,9 @@ Vue.component('seascape-map', {
 
 	data() {
 		return {
-			location: {}
-		}
+			location: {},
+			results: null
+ 		}
 	},
 
 	methods: {
@@ -76,9 +77,14 @@ Vue.component('seascape-map', {
 			var form = self.$refs.searchForm
             var formData = new FormData(form)
 
+            formData.append('lat', self.location.geometry.location.lat())
+            formData.append('lng', self.location.geometry.location.lng())
+
 			axios.post('/vue/search/store', formData).then(function(response){
 
-				// Display search results
+				console.log(response.data[0])
+
+				self.results = response.data
 
 			})
 			.catch(error => {
@@ -115,6 +121,9 @@ Vue.component('seascape-map', {
 
 			var msg = new SpeechSynthesisUtterance('You have searched for ' + part1 + ' ' + part2);
 			window.speechSynthesis.speak(msg);
+			
+			// window.speechSynthesis.speak(msg);
+			
 		}
 
 	}
