@@ -99,7 +99,15 @@ video {
 }
 
 section {
-  background-image: url("/background.png");
   background-size: cover;
   background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.section-01 {
+  background-image: url("/background.png");
+}
+
+.section-02 {
+  background-image: url("/background2.png");
 }

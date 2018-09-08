@@ -49,24 +49,62 @@
                     </div>
                 </div>
             </header>
-            <section class="full-height parallax-window">
+            <section class="section-01">
                 <div class="container-fluid text-light">
                     <div class="row">
-                        <div class="col-md-12 mt-5 text-center">
-                            <h1>Can correlations provide us with meaningful conclusions?</h1>
+                        <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
+                            <h1 class="text-left">Our Mission</h1>
                             <p>
-                                Data
+                                Every day, analysts endeavour to discover how powerful and valuable data is. It is the
+                                greatest potential source of knowledge, and with the right data, we can find answers to
+                                almost any question.
+                            </p>
+                            <p>
+                                The problem is the accessibility of data to people. Raw numbers are strange and unintuitive.
+                                What people want isn't data, but statistics. What if we transformed that data into
+                                a source of knowledge for anybody, regardless of their background or field?
                             </p>
                             <p>
                                 With seascape, we aim to help you figure out the correlation between marine and
-                                atmospheric pollution and the quality of life in urban and rural areas.
-                                <br>
-                                By leveraging open data, we provide you with a service that will: INSERT STUFF!
+                                atmospheric pollution and the quality of life in urban and rural areas by offering
+                                an intuitive and beautiful interface for you to use!
                             </p>
+                            <p>
+                                By leveraging open data, we produce relevant and valuable statistics for you to access
+                                at your fingertip -- whether in your office at home, or when on the go.
+                            </p>
+                            <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
+                                Get started!
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
+                <section class="section-02">
+                    <div class="container-fluid text-light">
+                        <div class="row">
+                            <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
+                                <h1 class="text-left">Our Scope</h1>
+                                <p>
+                                    We are a team of five members (in no particular order):
+                                </p>
+                                <ul>
+                                    <li>Isobelle Mead:</li>
+                                    <li>Emilian Roman:</li>
+                                    <li>Michael Dolphin:</li>
+                                    <li>Ryan:</li>
+                                    <li>Jason:</li>
+                                </ul>
+                                <p>
+                                    The rationale of our choice is rather straightforward:
+                                </p>
+                                <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
+                                    Seriously, check what we've prototyped for you!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             @endguest
             @include('map')
         </div>
