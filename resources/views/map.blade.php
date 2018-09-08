@@ -1,7 +1,7 @@
 <seascape-map inline-template >
 
 	<div>
-		<div class="container-fluid">
+		<div class="container-fluid" id="mapContainer">
 
 			<div class="row">
 
