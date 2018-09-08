@@ -15,15 +15,24 @@
         <link rel="stylesheet" href="{{ asset('logo.png') }}">
     </head>
     <body>
-    
         <div id="app">
-
-            <header class="full-height text-center flex-center">
-                <img src="{{ asset('logo.png') }}" alt="">
+            <header class="text-center my-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="{{ asset('logo.png') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <a href="#" class="btn btn-primary btn-250 btn-radius-left text-light">Login</a>
+                            <a href="#mapContainer" class="btn btn-secondary btn-250 rounded-0 text-light">Guest</a>
+                            <a href="#" class="btn btn-primary btn-250 btn-radius-right text-light">Register</a>
+                        </div>
+                    </div>
+                </div>
             </header>
-
             @include('map')
-
         </div>
 
         <script src="{{asset('js/app.js')}}"></script>
