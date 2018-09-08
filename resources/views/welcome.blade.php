@@ -29,7 +29,7 @@
                             <h4>How does pollution impact our air, our oceans, and us in urban and regional areas?</h4>
                             <h5>With open government data, we help you understand our atmosphere and hydrosphere.</h5>
                         </div>
-                        <div class="col-md-12 mt-5">
+                        <div class="col-md-12 mt-5" style="z-index: 1;">
                             <a href="{{ route('login') }}" class="btn btn-outline-light btn-250 btn-radius-left">Login</a>
                             <a href="#mapContainer" class="btn btn-outline-light btn-250 rounded-0">Try it!</a>
                             <a href="{{ route('register') }}" class="btn btn-outline-light btn-250 btn-radius-right">Register</a>
