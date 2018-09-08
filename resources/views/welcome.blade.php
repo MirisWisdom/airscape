@@ -25,9 +25,9 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col-md-12">
-                            <a href="#" class="btn btn-primary btn-250 btn-radius-left text-light">Login</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-250 btn-radius-left text-light">Login</a>
                             <a href="#mapContainer" class="btn btn-secondary btn-250 rounded-0 text-light">Guest</a>
-                            <a href="#" class="btn btn-primary btn-250 btn-radius-right text-light">Register</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary btn-250 btn-radius-right text-light">Register</a>
                         </div>
                     </div>
                 </div>
