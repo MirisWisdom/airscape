@@ -49,7 +49,7 @@
                 </div>
             </div>
         </header>
-        <section class="section-01">
+        <section class="section-01 d-flex align-items-center">
             <div class="container-fluid text-light">
                 <div class="row">
                     <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-02">
+        <section class="section-02 d-flex align-items-center">
             <div class="container-fluid text-light">
                 <div class="row">
                     <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
@@ -99,7 +99,7 @@
                             The rationale of our choice is rather straightforward:
                         </p>
                         <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
-                            Seriously, check what we've prototyped for you!
+                            Seriously, check our app out!
                         </a>
                     </div>
                 </div>
