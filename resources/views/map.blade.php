@@ -3,15 +3,15 @@
     <div>
         <div class="container-fluid" id="mapContainer">
             <div class="row">
-                <div class="col-sm-5 col-md-4 col-lg-3 full-height bg-light text-black text-center py-5 shadow">
+                <div class="col-sm-5 col-md-4 col-lg-3 full-height text-light text-center py-5 shadow"
+                     id="sidebar">
                     <form v-on:submit.prevent="searchLocation($event)" ref="searchForm">
                         <div class="form-group required">
-                            <label for="location">
-                                <h2>
-                                    Location
-                                </h2>
+                            <h2>Data Querying</h2>
+                            <label for="autocomplete" class="mt-4">
+                                Type your location:
                             </label>
-                            <input class="form-control form-control-lg geocomplete" name="location" id="autocomplete"/>
+                            <input class="geocomplete" name="location" id="autocomplete"/>
                         </div>
                     </form>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

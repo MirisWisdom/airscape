@@ -14,7 +14,6 @@
 }
 
 html, body {
-  background-image: url("/background.png");
   color: #003471;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
@@ -23,7 +22,7 @@ html, body {
 }
 
 .full-height {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .flex-center {
@@ -72,7 +71,8 @@ html, body {
 }
 
 .btn-250 {
-  width: 250px;
+  min-width: 200px;
+  max-width: 250px;
 }
 
 .btn-radius-left {
@@ -81,4 +81,47 @@ html, body {
 
 .btn-radius-right {
   border-radius: 0 5px 5px 0;
+}
+
+.header {
+  background-color: rgba(0, 31, 41, 0.85);
+}
+
+video {
+  margin: 0 auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+section {
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.section-01 {
+  background-image: url("/background.png");
+}
+
+.section-02 {
+  background-image: url("/background2.png");
+}
+
+#sidebar {
+  background: url("/sidebar.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+input {
+  background: transparent;
+  border: 1px white solid;
+  width: 100%;
+  padding: 5px;
+  color: white;
 }
