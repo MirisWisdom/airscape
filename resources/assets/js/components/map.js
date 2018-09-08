@@ -4,8 +4,7 @@ Vue.component('seascape-map', {
 
 	data() {
 		return {
-			mapContainer : document.getElementById('map'),
-			mapInput : document.getElementById('autocomplete')
+			
 		}
 	},
 
@@ -15,7 +14,7 @@ Vue.component('seascape-map', {
 
 			var self = this 
 
-			map = new google.maps.Map(self.mapContainer, 
+			map = new google.maps.Map(document.getElementById('map'), 
 				{
 				center: {
 					lat: -34.397,
@@ -24,7 +23,7 @@ Vue.component('seascape-map', {
 				zoom: 8
 		    });
 
-		    var input = self.mapInput;
+		    var input = document.getElementById('autocomplete');
 
 		    var autocomplete = new google.maps.places.Autocomplete(input);
 

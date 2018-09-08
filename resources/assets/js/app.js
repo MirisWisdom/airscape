@@ -18,7 +18,7 @@ window.Vue = require('vue');
 
 require('./components/map.js');
 
-const app = new Vue({
+window.app = new Vue({
     el: '#app'
 });
 
