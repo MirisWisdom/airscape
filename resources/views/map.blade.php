@@ -4,7 +4,7 @@
         <div class="container-fluid" id="mapContainer">
             <div class="row">
                 <div class="col-sm-5 col-md-4 col-lg-3 full-height bg-light text-black text-center py-5 shadow">
-                    <form v-on:submit.prevent="searchLocation($event)">
+                    <form v-on:submit.prevent="searchLocation($event)" ref="searchForm">
                         <div class="form-group required">
                             <label for="location">
                                 <h2>

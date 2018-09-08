@@ -62,19 +62,22 @@ Vue.component('seascape-map', {
 		        ].join(' ');
 		      }
 
+		      self.searchLocation()
+
 		    });
 
 		},
 
-		searchLocation(submitEvent){
+		searchLocation(){
 
 			var self = this 
 
-			var form = submitEvent.target
+			var form = self.$refs.searchForm
             var formData = new FormData(form)
 
 			axios.post('/vue/search/store', formData).then(function(response){
 
+				console.log('save search')
 				// Do something here
 
 			})

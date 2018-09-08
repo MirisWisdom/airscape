@@ -47242,19 +47242,21 @@ Vue.component('seascape-map', {
 				if (place.address_components) {
 					address = [place.address_components[0] && place.address_components[0].short_name || '', place.address_components[1] && place.address_components[1].short_name || '', place.address_components[2] && place.address_components[2].short_name || ''].join(' ');
 				}
+
+				self.searchLocation();
 			});
 		},
-		searchLocation: function searchLocation(submitEvent) {
+		searchLocation: function searchLocation() {
 
 			var self = this;
 
-			var form = submitEvent.target;
+			var form = self.$refs.searchForm;
 			var formData = new FormData(form);
 
 			axios.post('/vue/search/store', formData).then(function (response) {
 
+				console.log('save search');
 				// Do something here
-
 			}).catch(function (error) {
 
 				console.log(error);
