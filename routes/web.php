@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/vue/search/store', [
+	'as' => 'search.store',
+	'uses' => 'SearchController@store'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

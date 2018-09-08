@@ -13905,7 +13905,7 @@ window.Vue = __webpack_require__(36);
 
 __webpack_require__(39);
 
-var app = new Vue({
+window.app = new Vue({
   el: '#app'
 });
 
@@ -47191,10 +47191,7 @@ Vue.component('seascape-map', {
 	props: [],
 
 	data: function data() {
-		return {
-			mapContainer: document.getElementById('map'),
-			mapInput: document.getElementById('autocomplete')
-		};
+		return {};
 	},
 
 
@@ -47203,7 +47200,7 @@ Vue.component('seascape-map', {
 
 			var self = this;
 
-			map = new google.maps.Map(self.mapContainer, {
+			map = new google.maps.Map(document.getElementById('map'), {
 				center: {
 					lat: -34.397,
 					lng: 150.644
@@ -47211,7 +47208,7 @@ Vue.component('seascape-map', {
 				zoom: 8
 			});
 
-			var input = self.mapInput;
+			var input = document.getElementById('autocomplete');
 
 			var autocomplete = new google.maps.places.Autocomplete(input);
 
