@@ -16,6 +16,7 @@
     </head>
     <body>
         <div id="app">
+            @guest
             <header class="text-center my-5">
                 <div class="container-fluid">
                     <div class="row">
@@ -32,6 +33,7 @@
                     </div>
                 </div>
             </header>
+            @endguest
             @include('map')
         </div>
 
