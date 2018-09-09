@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>seascape</title>
+    <title>{{ config('app.name', 'seascape') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -65,7 +65,7 @@
                             a source of knowledge for anybody, regardless of their background or field?
                         </p>
                         <p>
-                            With seascape, we aim to help you figure out the correlation between marine and
+                            With {{ config('app.name', 'seascape') }}, we aim to help you figure out the correlation between marine and
                             atmospheric pollution and the quality of life in urban and rural areas by offering
                             an intuitive and beautiful interface for you to use!
                         </p>
