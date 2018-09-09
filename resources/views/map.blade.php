@@ -18,7 +18,7 @@
                         @csrf
                     </form>
                     <div v-if="results != null">
-                        <table class="table table-hover">
+                        <table class="table table-hover text-monospace">
                             <tr>
                                 <td>Longitude</td>
                                 <td>@{{ results.long }}</td>
@@ -50,6 +50,26 @@
                             <tr>
                                 <td>Ozone</td>
                                 <td>@{{ results.o3 ? results.o3 : 'N/A' }}</td>
+                            </tr>
+                            <tr v-if="results.site < 33" class="bg-success">
+                                <td>Pollution Score</td>
+                                <td>@{{ results.site ? results.site : 'N/A' }} (Very good)</td>
+                            </tr>
+                            <tr v-if="results.site > 33 && results.site < 66" class="bg-success">
+                                <td>Pollution Score</td>
+                                <td>@{{ results.site ? results.site : 'N/A' }} (Good)</td>
+                            </tr>
+                            <tr v-if="results.site > 67 && results.site < 99" class="bg-warning">
+                                <td>Pollution Score</td>
+                                <td>@{{ results.site ? results.site : 'N/A' }} (Fair)</td>
+                            </tr>
+                            <tr v-if="results.site > 100 && results.site < 149" class="bg-warning">
+                                <td>Pollution Score</td>
+                                <td>@{{ results.site ? results.site : 'N/A' }} (Poor)</td>
+                            </tr>
+                            <tr v-if="results.site > 150" class="bg-danger">
+                                <td>Pollution Score</td>
+                                <td>@{{ results.site ? results.site : 'N/A' }} (Very poor)</td>
                             </tr>
                         </table>
                         {{--@{{ results }}--}}
