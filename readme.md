@@ -2,9 +2,7 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/yumiris/airscape/develop/public/logo.png" width=320>
 </p>    
-<p align="center">
-    <h3>airspace</h3>
-</p>
+<h3 align="center">airspace</h3>
 <p align="center">
     <a href="https://airscape.bottlenosecreative.com.au/">
         With open government data, we help you understand our atmosphere and hydrosphere.
