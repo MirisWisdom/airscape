@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
 Route::post('/vue/search/store', [
 	'as' => 'search.store',
 	'uses' => 'SearchController@store'
@@ -23,7 +19,9 @@ Route::post('/vue/search/store', [
 Auth::routes();
 
 Route::get('/home', function(){
-	return redirect()->route('welcome');
-})->name('home');
+	return redirect()->route('home');
+});
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

@@ -13,6 +13,17 @@
                             </label>
                             <input class="geocomplete" name="location" id="autocomplete"/>
                             <small>For a working example, type "Canberra"!</small>
+                            <div class="text-center" v-if="results == null">
+                                <hr>
+                                <h5>Search History</h5>
+                                @foreach($searches as $i => $search)
+                                    <button class="btn btn-outline-light btn-sm btn-block text-left text-monospace mb-1"
+                                            onclick="setSearch({{ $i }})"
+                                            id="button{{ $i }}">
+                                        <small>{{ $search->location }}</small>
+                                    </button>
+                                @endforeach
+                            </div>
                         </div>
 
 
@@ -126,3 +137,11 @@
         </div>
     </div>
 </seascape-map>
+
+<script>
+    function setSearch(id)
+    {
+        let text = $('#button' + id).text()
+        $('#autocomplete').val(text)
+    }
+</script>
