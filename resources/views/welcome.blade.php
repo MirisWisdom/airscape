@@ -1,95 +1,120 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+    <title>{{ config('app.name', 'seascape') }}</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+    <link rel="stylesheet" href="{{ asset('logo.png') }}">
+</head>
+<body>
+<div id="app">
+    @guest
+        <header class="text-center p-5 header" style="min-height:80vh; position: relative;">
+            <div class="container-fluid text-light">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="{{ asset('logo.png') }}" class="img-fluid" style="width: 256px">
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <h4>How does pollution impact our air, our oceans, and us in urban and regional areas?</h4>
+                        <h5>With open government data, we help you understand our atmosphere and hydrosphere.</h5>
+                    </div>
+                    <div class="col-md-12 mt-5" style="z-index: 1;">
+                        <a href="{{ route('login') }}" class="btn btn-outline-light btn-250 btn-radius-left">Login</a>
+                        <a href="#mapContainer" class="btn btn-outline-light btn-250 rounded-0">Try it!</a>
+                        <a href="{{ route('register') }}" class="btn btn-outline-light btn-250 btn-radius-right">Register</a>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="row">
+                    <div class="col-md-12 mt-5">
+                        <p class="text-monospace">
+                            <small>
+                                GH:\> isobelle \ emilian \ michael \ ryan \ jason _
+                            </small>
+                        </p>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="row no-gutters video-wrapper" style="position: absolute; top: 0; left: 0;">
+                    <video playsinline autoplay muted loop>
+                        <source src="{{ asset('background.webm') }}" type="video/webm">
+                    </video>
                 </div>
             </div>
-        </div>
-    </body>
+        </header>
+        <section class="section-01 d-flex align-items-center">
+            <div class="container-fluid text-light">
+                <div class="row">
+                    <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
+                        <h1 class="text-left">Our Mission</h1>
+                        <p>
+                            Every day, analysts endeavour to discover how powerful and valuable data is. It is the
+                            greatest potential source of knowledge, and with the right data, we can find answers to
+                            almost any question.
+                        </p>
+                        <p>
+                            The problem is the accessibility of data to people. Raw numbers are strange and unintuitive.
+                            What people want isn't data, but statistics. What if we transformed that data into
+                            a source of knowledge for anybody, regardless of their background or field?
+                        </p>
+                        <p>
+                            With {{ config('app.name', 'seascape') }}, we aim to help you figure out the correlation between marine and
+                            atmospheric pollution and the quality of life in urban and rural areas by offering
+                            an intuitive and beautiful interface for you to use!
+                        </p>
+                        <p>
+                            By leveraging open data, we produce relevant and valuable statistics for you to access
+                            at your fingertip -- whether in your office at home, or when on the go.
+                        </p>
+                        <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
+                            Get started!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-02 d-flex align-items-center">
+            <div class="container-fluid text-light">
+                <div class="row">
+                    <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
+                        <h1 class="text-left">Our Scope</h1>
+                        <p>
+                            We are a team of five members (in no particular order):
+                        </p>
+                        <ul>
+                            <li>Isobelle Mead:</li>
+                            <li>Emilian Roman:</li>
+                            <li>Michael Dolphin:</li>
+                            <li>Ryan:</li>
+                            <li>Jason:</li>
+                        </ul>
+                        <p>
+                            The rationale of our choice is rather straightforward:
+                        </p>
+                        <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
+                            Seriously, check our app out!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endguest
+    @include('map')
+</div>
+
+<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/parallax.min.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmRcarfXPtbpOPF1QAcUTvmcAuiSVVYcw&libraries=places&callback=initMap"
+        async defer></script>
+</body>
 </html>
+
+
+

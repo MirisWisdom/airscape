@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 
+
 window.Vue = require('vue');
 
 /**
@@ -15,8 +16,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+require('./components/map.js');
 
-const app = new Vue({
+window.app = new Vue({
     el: '#app'
 });
+
+window.initMap = function(){
+	app.$refs.map.initMap();
+}
