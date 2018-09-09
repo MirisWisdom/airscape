@@ -20,56 +20,56 @@
                     <div v-if="results != null">
                         <table class="table table-hover text-monospace">
                             <tr>
-                                <td>Longitude</td>
-                                <td>@{{ results.long }}</td>
+                                <td><small>Longitude</small></td>
+                                <td><small>@{{ results.long }}</small></td>
                             </tr>
                             <tr>
-                                <td>Latitude</td>
-                                <td>@{{ results.lat }}</td>
+                                <td><small>Latitude</small></td>
+                                <td><small>@{{ results.lat }}</small></td>
                             </tr>
                             <tr>
-                                <td>Wind Direction</td>
-                                <td>@{{ results.wind_direction ? results.wind_direction : 'N/A' }}</td>
+                                <td><small>Wind Direction</small></td>
+                                <td><small>@{{ results.wind_direction ? results.wind_direction : 'N/A' }}</small></td>
                             </tr>
                             <tr>
-                                <td>Particulant Matter 10</td>
-                                <td>@{{ results.pm10 ? results.pm10 : 'N/A' }}</td>
+                                <td><small>Particulant Matter 10</small></td>
+                                <td><small>@{{ results.pm10 ? results.pm10 : 'N/A' }}</small></td>
                             </tr>
                             <tr>
-                                <td>Particulant Matter 2.5</td>
-                                <td>@{{ results.pm2_5 ? results.pm2_5 : 'N/A' }}</td>
+                                <td><small>Particulant Matter 2.5</small></td>
+                                <td><small>@{{ results.pm2_5 ? results.pm2_5 : 'N/A' }}</small></td>
                             </tr>
                             <tr>
-                                <td>Carbon Dioxide</td>
-                                <td>@{{ results.co ? results.co : 'N/A' }}</td>
+                                <td><small>Carbon Dioxide</small></td>
+                                <td><small>@{{ results.co ? results.co : 'N/A' }}</small></td>
                             </tr>
                             <tr>
-                                <td>Nitrogen Dioxide</td>
-                                <td>@{{ results.no2 ? results.no2 : 'N/A' }}</td>
+                                <td><small>Nitrogen Dioxide</small></td>
+                                <td><small>@{{ results.no2 ? results.no2 : 'N/A' }}</small></td>
                             </tr>
                             <tr>
-                                <td>Ozone</td>
-                                <td>@{{ results.o3 ? results.o3 : 'N/A' }}</td>
+                                <td><small>Ozone</small></td>
+                                <td><small>@{{ results.o3 ? results.o3 : 'N/A' }}</small></td>
                             </tr>
                             <tr v-if="results.site < 33" class="bg-success">
-                                <td>Pollution Score</td>
-                                <td>@{{ results.site ? results.site : 'N/A' }} (Very good)</td>
+                                <td><small>Pollution Score</small></td>
+                                <td><small>@{{ results.site ? results.site : 'N/A' }} (Very good)</small></td>
                             </tr>
                             <tr v-if="results.site > 33 && results.site < 66" class="bg-success">
-                                <td>Pollution Score</td>
-                                <td>@{{ results.site ? results.site : 'N/A' }} (Good)</td>
+                                <td><small>Pollution Score</small></td>
+                                <td><small>@{{ results.site ? results.site : 'N/A' }} (Good)</small></td>
                             </tr>
                             <tr v-if="results.site > 67 && results.site < 99" class="bg-warning">
-                                <td>Pollution Score</td>
-                                <td>@{{ results.site ? results.site : 'N/A' }} (Fair)</td>
+                                <td><small>Pollution Score</small></td>
+                                <td><small>@{{ results.site ? results.site : 'N/A' }} (Fair)</small></td>
                             </tr>
                             <tr v-if="results.site > 100 && results.site < 149" class="bg-warning">
-                                <td>Pollution Score</td>
-                                <td>@{{ results.site ? results.site : 'N/A' }} (Poor)</td>
+                                <td><small>Pollution Score</small></td>
+                                <td><small>@{{ results.site ? results.site : 'N/A' }} (Poor)</small></td>
                             </tr>
                             <tr v-if="results.site > 150" class="bg-danger">
-                                <td>Pollution Score</td>
-                                <td>@{{ results.site ? results.site : 'N/A' }} (Very poor)</td>
+                                <td><small>Pollution Score</small></td>
+                                <td><small>@{{ results.site ? results.site : 'N/A' }} (Very poor)</small></td>
                             </tr>
                         </table>
                         {{--@{{ results }}--}}
