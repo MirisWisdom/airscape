@@ -12,7 +12,7 @@
                                 Type your location:
                             </label>
                             <input class="geocomplete" name="location" id="autocomplete"/>
-                            <small>For a working example, type "Canberra"!</small>
+                            <small>For a working example, type "Florey ACT" or "Monash ACT"!</small>
                             <hr>
                             <div class="text-left">
                                 <div class="form-group form-check">
