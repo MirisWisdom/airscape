@@ -32,6 +32,10 @@ class SearchController extends Controller
                 ->where('lat', '<=', $maxLat);
     	})->get();
 
+    	\Log::info([
+    	    'minLat' => $minLat,
+            'maxLat' => $maxLat
+        ]);
         \Log::info($results);
 
     	return $results;
