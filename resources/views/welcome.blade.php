@@ -74,7 +74,7 @@
                             at your fingertip -- whether in your office at home, or when on the go.
                         </p>
                         <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
-                            Get started!
+                            Check it out!
                         </a>
                     </div>
                 </div>
@@ -83,23 +83,35 @@
         <section class="section-02 d-flex align-items-center">
             <div class="container-fluid text-light">
                 <div class="row">
-                    <div class="col-md-6 offset-0 offset-md-3 mt-5 text-justify">
-                        <h1 class="text-left">Our Scope</h1>
+                    <div class="col-md-8 offset-0 offset-md-2 mt-5 text-justify">
+                        <h1 class="text-left">Our Team</h1>
                         <p>
                             We are a team of five members (in no particular order):
                         </p>
-                        <ul>
-                            <li>Isobelle Mead:</li>
-                            <li>Emilian Roman:</li>
-                            <li>Michael Dolphin:</li>
-                            <li>Ryan:</li>
-                            <li>Jason:</li>
-                        </ul>
-                        <p>
-                            The rationale of our choice is rather straightforward:
-                        </p>
+                        <table class="table">
+                            <tr>
+                                <td>Isobelle Mead</td>
+                                <td>Graphic design, scientific interpretation. Somehow, also a chemistry teacher.</td>
+                            </tr>
+                            <tr>
+                                <td>Emilian Roman</td>
+                                <td>Front-end & back-end development/design. Monochromatic scheme, with an accent.</td>
+                            </tr>
+                            <tr>
+                                <td>Michael Dolphin</td>
+                                <td>Front-end & back-end development, video design, and database structure.</td>
+                            </tr>
+                            <tr>
+                                <td>Ryan Hill</td>
+                                <td>User layout design, secondary data crunching.</td>
+                            </tr>
+                            <tr>
+                                <td>Jason Parre</td>
+                                <td>Primary data crunching.</td>
+                            </tr>
+                        </table>
                         <a href="#mapContainer" class="btn btn-outline-light btn-block mb-4">
-                            Seriously, check our app out!
+                            Check out where our quarrelling got us!
                         </a>
                     </div>
                 </div>
