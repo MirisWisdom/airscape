@@ -12,6 +12,7 @@
                                 Type your location:
                             </label>
                             <input class="geocomplete" name="location" id="autocomplete"/>
+                            <small>For a working example, type "Canberra"!</small>
                         </div>
                     </form>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -72,7 +73,6 @@
                                 <td><small>@{{ results.site ? results.site : 'N/A' }} (Very poor)</small></td>
                             </tr>
                         </table>
-                        {{--@{{ results }}--}}
                     </div>
 
                     @auth
