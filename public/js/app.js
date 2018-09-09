@@ -47264,7 +47264,7 @@ Vue.component('seascape-map', {
 
 				console.log(response.data[0]);
 
-				self.results = response.data;
+				self.results = response.data[0];
 			}).catch(function (error) {
 
 				console.log(error);
