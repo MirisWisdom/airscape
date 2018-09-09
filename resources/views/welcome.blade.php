@@ -37,7 +37,7 @@
                     <div class="col-md-12 mt-5">
                         <p class="text-monospace">
                             <small>
-                                GH:\> isobelle mead \ emilian roman \ michael dolphin \ ryan \ jason _
+                                GH:\> isobelle \ emilian \ michael \ ryan \ jason _
                             </small>
                         </p>
                     </div>
