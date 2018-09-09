@@ -3,11 +3,12 @@
     <img src="https://raw.githubusercontent.com/yumiris/airscape/develop/public/logo.png" width=320>
 </p>    
 <p align="center">
-    <a href="https://airscape.bottlenosecreative.com.au/"><b>airscape</b></a>
+    <h3>airspace</h3>
 </p>
-<br>
 <p align="center">
-    With open government data, we help you understand our atmosphere and hydrosphere.
+    <a href="https://airscape.bottlenosecreative.com.au/">
+        With open government data, we help you understand our atmosphere and hydrosphere.
+    </a>
 </p>
 <p align="center">
     <img src="https://raw.githubusercontent.com/yumiris/airscape/develop/screenshot.png">
