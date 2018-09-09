@@ -13,6 +13,29 @@
                             </label>
                             <input class="geocomplete" name="location" id="autocomplete"/>
                             <small>For a working example, type "Canberra"!</small>
+                            <hr>
+                            <div class="text-left">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="pm10" v-model="pm10" />
+                                    <label class="form-check-label" for="pm10">Partic. Matter 10</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="pm2_5" v-model="pm2_5" />
+                                    <label class="form-check-label" for="pm2_5">Partic. Matter 2.5</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="co2" v-model="co2" />
+                                    <label class="form-check-label" for="co2">Carbon Dioxide</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="no2" v-model="no2" />
+                                    <label class="form-check-label" for="no2">Nitrogen Dioxide</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="o2" v-model="o2" />
+                                    <label class="form-check-label" for="o2">Ozone</label>
+                                </div>
+                            </div>
                             <div class="text-center" v-if="results == null">
                                 <hr>
                                 <h5>Search History</h5>
@@ -25,29 +48,6 @@
                                 @endforeach
                             </div>
                         </div>
-
-
-                        <div class="form-group form-check text-left">
-                            <input type="checkbox" class="form-check-input" name="pm10" v-model="pm10" />
-                            <label class="form-check-label" for="pm10">Particulant Matter 10</label>
-                        </div>
-                        <div class="form-group form-check text-left">
-                            <input type="checkbox" class="form-check-input" name="pm2_5" v-model="pm2_5" />
-                            <label class="form-check-label" for="pm2_5">Particulant Matter 2.5</label>
-                        </div>
-                        <div class="form-group form-check text-left">
-                            <input type="checkbox" class="form-check-input" name="co2" v-model="co2" />
-                            <label class="form-check-label" for="co2">Carbon Dioxide</label>
-                        </div>
-                        <div class="form-group form-check text-left">
-                            <input type="checkbox" class="form-check-input" name="no2" v-model="no2" />
-                            <label class="form-check-label" for="no2">Nitrogen Dioxide</label>
-                        </div>
-                        <div class="form-group form-check text-left">
-                            <input type="checkbox" class="form-check-input" name="o2" v-model="o2" />
-                            <label class="form-check-label" for="o2">Ozone</label>
-                        </div>
-
                     </form>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
