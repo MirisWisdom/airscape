@@ -23,8 +23,8 @@ class SearchController extends Controller
     	$s->save();
 
 
-        $minLat = $request->lat - 1;
-        $maxLat = $request->lat + 1;
+        $minLat = $request->lat - 0.02;
+        $maxLat = $request->lat + 0.02;
 
     	$results = AirData::where(function($query) use ($minLat, $maxLat){
             $query
