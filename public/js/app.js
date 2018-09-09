@@ -47193,7 +47193,14 @@ Vue.component('seascape-map', {
 	data: function data() {
 		return {
 			location: {},
-			results: null
+			results: null,
+			audio: true,
+			loading: false,
+			pm10: true,
+			pm2_5: true,
+			co2: true,
+			no2: true,
+			o2: true
 		};
 	},
 
@@ -47253,6 +47260,8 @@ Vue.component('seascape-map', {
 		searchLocation: function searchLocation() {
 			var self = this;
 
+			self.loading = true;
+
 			var formData = {
 				'location': self.location.formatted_address,
 				'lat': self.location.geometry.location.lat(),
@@ -47261,9 +47270,13 @@ Vue.component('seascape-map', {
 
 			axios.post('/vue/search/store', formData).then(function (response) {
 				self.results = response.data[0];
+				self.loading = false;
 			}).catch(function (error) {
 				console.log(error);
 			});
+		},
+		clearSearch: function clearSearch() {
+			this.results = null;
 		}
 	},
 
@@ -47275,28 +47288,44 @@ Vue.component('seascape-map', {
 
 	watch: {
 		results: function results() {
-			var adjective = 'Very Good';
 
-			if (this.results.site > 33 && this.results.site < 66) {
-				adjective = 'Good';
+			if (this.results != null) {
+				window.speechSynthesis.cancel();
+
+				var adjective = 'Very Good';
+
+				if (this.results.site > 33 && this.results.site < 66) {
+					adjective = 'Good';
+				}
+
+				if (this.results.site > 67 && this.results.site < 99) {
+					adjective = 'Fair';
+				}
+
+				if (this.results.site > 100 && this.results.site < 149) {
+					adjective = 'Poor';
+				}
+
+				if (this.results.site > 150) {
+					adjective = 'Very poor';
+				}
+
+				var msg = 'The location you have typed is ' + this.location.formatted_address + '. Its Particulant Matter values is ' + this.results.pm10 + '. Its Nitrogen Dioxide value is' + this.results.no2 + '. The pollution score is' + this.results.site + ', which is considered to be ' + adjective;
+
+				var synth = new SpeechSynthesisUtterance(msg);
+
+				if (this.audio == true) {
+					window.speechSynthesis.speak(synth);
+				}
 			}
+		},
+		audio: function audio() {
 
-			if (this.results.site > 67 && this.results.site < 99) {
-				adjective = 'Fair';
+			if (this.audio == true) {
+				window.speechSynthesis.resume();
+			} else {
+				window.speechSynthesis.pause();
 			}
-
-			if (this.results.site > 100 && this.results.site < 149) {
-				adjective = 'Poor';
-			}
-
-			if (this.results.site > 150) {
-				adjective = 'Very poor';
-			}
-
-			var msg = 'The location you have typed is ' + this.location.formatted_address + '. Its Particulant Matter values is ' + this.results.pm10 + '. Its Nitrogen Dioxide value is' + this.results.no2 + '. The pollution score is' + this.results.site + ', which is considered to be ' + adjective;
-
-			var synth = new SpeechSynthesisUtterance(msg);
-			window.speechSynthesis.speak(synth);
 		}
 	}
 });

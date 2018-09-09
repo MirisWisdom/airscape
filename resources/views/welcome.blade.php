@@ -17,7 +17,7 @@
 <body>
 <div id="app">
     @guest
-        <header class="full-height text-center p-5 header">
+        <header class="text-center p-5 header" style="min-height:80vh; position: relative;">
             <div class="container-fluid text-light">
                 <div class="row">
                     <div class="col-md-12">
@@ -42,7 +42,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row no-gutters" style="position: absolute; top: 0; left: 0;">
+                <div class="row no-gutters video-wrapper" style="position: absolute; top: 0; left: 0;">
                     <video playsinline autoplay muted loop>
                         <source src="{{ asset('background.webm') }}" type="video/webm">
                     </video>
