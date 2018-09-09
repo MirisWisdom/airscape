@@ -20,7 +20,6 @@ class AddColumnsToAirData extends Migration
             $table->float('no2')->nullable();
             $table->float('o3')->nullable();
             $table->float('site')->nullable();
-            $table->datetime('date')->nullable();
         });
     }
 
