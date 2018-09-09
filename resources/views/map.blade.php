@@ -42,7 +42,8 @@
                                 @foreach($searches as $i => $search)
                                     <button class="btn btn-outline-light btn-sm btn-block text-left text-monospace mb-1"
                                             onclick="setSearch({{ $i }})"
-                                            id="button{{ $i }}">
+                                            id="button{{ $i }}"
+                                            disabled>
                                         <small>{{ $search->location }}</small>
                                     </button>
                                 @endforeach
