@@ -23,3 +23,4 @@ Route::post('/vue/search/store', [
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
