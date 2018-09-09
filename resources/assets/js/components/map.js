@@ -74,11 +74,11 @@ Vue.component('seascape-map', {
 
 			var self = this 
 
-			var form = self.$refs.searchForm
-            var formData = new FormData(form)
-
-            formData.append('lat', self.location.geometry.location.lat())
-            formData.append('lng', self.location.geometry.location.lng())
+            var formData = {
+				'location': self.location.formatted_address,
+				'lat': self.location.geometry.location.lat(),
+                'lng': self.location.geometry.location.lng()
+			}
 
 			axios.post('/vue/search/store', formData).then(function(response){
 
