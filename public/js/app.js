@@ -47275,7 +47275,25 @@ Vue.component('seascape-map', {
 
 	watch: {
 		results: function results() {
-			var msg = 'The location you have typed is ' + this.location.formatted_address + '. Its Particulant Matter values is ' + this.results.pm10 + '. Its Nitrogen Dioxide value is' + this.results.no2;
+			var adjective = 'Very Good';
+
+			if (this.results.site > 33 && this.results.site < 66) {
+				adjective = 'Good';
+			}
+
+			if (this.results.site > 67 && this.results.site < 99) {
+				adjective = 'Fair';
+			}
+
+			if (this.results.site > 100 && this.results.site < 149) {
+				adjective = 'Poor';
+			}
+
+			if (this.results.site > 150) {
+				adjective = 'Very poor';
+			}
+
+			var msg = 'The location you have typed is ' + this.location.formatted_address + '. Its Particulant Matter values is ' + this.results.pm10 + '. Its Nitrogen Dioxide value is' + this.results.no2 + '. The pollution score is' + this.results.site + ', which is considered to be ' + adjective;
 
 			var synth = new SpeechSynthesisUtterance(msg);
 			window.speechSynthesis.speak(synth);
