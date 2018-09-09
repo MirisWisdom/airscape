@@ -5,7 +5,7 @@ Vue.component('seascape-map', {
 	data() {
 		return {
 			location: {},
-			results: null
+			results: null,
  		}
 	},
 
@@ -80,9 +80,7 @@ Vue.component('seascape-map', {
 			}
 
 			axios.post('/vue/search/store', formData).then(function(response){
-				console.log(response.data[0])
 				self.results = response.data[0]
-				console.log(self.results)
 			})
 			.catch(error => {
 				console.log(error);
@@ -107,18 +105,13 @@ Vue.component('seascape-map', {
 	},
 
 	watch: {
+		results(){
+            let msg = 'The location you have typed is ' + this.location.formatted_address
+                + '. Its Particulant Matter values is ' + this.results.pm10
+                + '. Its Nitrogen Dioxide value is' + this.results.no2
 
-		location(){
-			var part1 = this.location.address_components[0].long_name;
-			var part2 = this.location.address_components[2].long_name;
-
-			var msg = new SpeechSynthesisUtterance('You have searched for ' + part1 + ' ' + part2);
-			window.speechSynthesis.speak(msg);
-			
-			// window.speechSynthesis.speak(msg);
-			
+            let synth = new SpeechSynthesisUtterance(msg);
+            window.speechSynthesis.speak(synth);
 		}
-
 	}
-
 });
