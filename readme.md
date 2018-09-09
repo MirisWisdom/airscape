@@ -1,12 +1,17 @@
 <html>
 <p align="center">
     <img src="https://raw.githubusercontent.com/yumiris/airscape/develop/public/logo.png" width=320>
-    <br>
-    <a href="https://airscape.bottlenosecreative.com.au/">airscape</a>
-    <br>
+</p>    
+<p align="center">
+    <a href="https://airscape.bottlenosecreative.com.au/"><b>airscape</b></a>
+</p>
+<br>
+<p align="center">
     With open government data, we help you understand our atmosphere and hydrosphere.
-    <br>
+</p>
+<p align="center">
     <img src="https://raw.githubusercontent.com/yumiris/airscape/develop/screenshot.png">
+</p>
 </html>
 
 # Introduction
