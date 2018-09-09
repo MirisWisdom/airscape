@@ -47251,7 +47251,6 @@ Vue.component('seascape-map', {
 			});
 		},
 		searchLocation: function searchLocation() {
-
 			var self = this;
 
 			var formData = {
@@ -47261,12 +47260,10 @@ Vue.component('seascape-map', {
 			};
 
 			axios.post('/vue/search/store', formData).then(function (response) {
-
 				console.log(response.data[0]);
-
 				self.results = response.data[0];
+				console.log(self.results);
 			}).catch(function (error) {
-
 				console.log(error);
 			});
 		}

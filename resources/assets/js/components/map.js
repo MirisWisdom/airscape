@@ -71,8 +71,7 @@ Vue.component('seascape-map', {
 		},
 
 		searchLocation(){
-
-			var self = this 
+			var self = this
 
             var formData = {
 				'location': self.location.formatted_address,
@@ -81,20 +80,14 @@ Vue.component('seascape-map', {
 			}
 
 			axios.post('/vue/search/store', formData).then(function(response){
-
 				console.log(response.data[0])
-
-				self.results = response.data
-
+				self.results = response.data[0]
+				console.log(self.results)
 			})
 			.catch(error => {
-
 				console.log(error);
-
 			});
-
 		}
-
 	},
 
 	mounted: function() {
